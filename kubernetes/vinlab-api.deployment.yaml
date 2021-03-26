@@ -1,0 +1,73 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vinlab-api-deployment
+spec:
+  selector:
+    matchLabels:
+      app: vinlab-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vinlab-api
+    spec:
+      nodeSelector:
+        node_name: data_01
+      volumes:
+        - name: backend-configmap
+          configMap:
+            name: backend-configmap
+            items:
+              - key: config.production.toml
+                path: config.production.toml
+              - key: permissions.csv
+                path: permissions.csv
+      containers:
+        - name: vindr-lab-api
+          image: vindr/vinlab-api
+          ports:
+            - containerPort: 8080
+              name: backend-01
+          env:
+            - name: API_ENV
+              value: production
+            - name: DEBUG
+              value: "DEBUG"
+            - name: ELASTICSEARCH__URI
+              value: http://es.vinlab-dev:9200
+            - name: KEYCLOAK__URI
+              value: http://keycloak.vinlab-dev:8080
+            - name: KEYCLOAK__MASTER_REALM
+              value: master
+            - name: KEYCLOAK__APP_REALM
+              value: vinlab
+            - name: KEYCLOAK__ADMIN_USERNAME
+              value: admin
+            - name: KEYCLOAK__ADMIN_PASSWORD
+              value: admin
+            - name: MINIO__URI
+              value: minio.vinlab-dev:9000
+            - name: MINIO__ACCESS_KEY_ID
+              value: vindr-lab-api
+            - name: MINIO__SECRET_ACCESS_KEY
+              value: vindr-lab-api
+            - name: MINIO__BUCKET_NAME
+              value: vinlab-label-exported
+            - name: REDIS__URI
+              value: redis.vinlab-dev:6379
+            - name: ORTHANC__URI
+              value: http://orthanc.vinlab-dev:8042
+            - name: ID_GENERATOR__URI
+              value: http://id-generator.vinlab-dev:8080
+          volumeMounts:
+            - name: backend-configmap
+              mountPath: /opt/app/conf/config.production.toml
+              subPath: config.production.toml
+            - name: backend-configmap
+              mountPath: /opt/app/conf/permissions.csv
+              subPath: permissions.csv
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: vindr-ecr

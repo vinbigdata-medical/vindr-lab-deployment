@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: elasticsearch-pvc
+  namespace: vinlab-dev
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: es-deployment
+spec:
+  selector:
+    matchLabels:
+      app: es
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: es
+    spec:
+      nodeSelector:
+        node_name: data_01
+      volumes:
+        - name: elasticsearch-pvc
+          persistentVolumeClaim:
+            claimName: elasticsearch-pvc
+      containers:
+        - name: es
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+          ports:
+            - containerPort: 9200
+              name: es-port
+          env:
+            - name: discovery.type
+              value: single-node
+            - name: bootstrap.memory_lock
+              value: "true"
+            - name: ES_JAVA_OPTS
+              value: "-Xms512m -Xmx512m"
+          volumeMounts:
+            - name: elasticsearch-pvc
+              mountPath: /usr/share/elasticsearch/data

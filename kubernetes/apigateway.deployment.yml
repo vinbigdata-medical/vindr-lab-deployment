@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apigateway-deployment
+  annotations:
+    configmap.reloader.stakater.com/reload: "apigateway-configmap"
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      nodeSelector:
+        node_name: data_01
+      volumes:
+        - name: apigateway-configmap
+          configMap:
+            name: apigateway-configmap
+            items:
+              - key: nginx.conf
+                path: default.conf
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+              name: nginx-port
+            - containerPort: 443
+              name: https-port
+            - name: workdir
+              mountPath: "/usr/share/nginx/html"

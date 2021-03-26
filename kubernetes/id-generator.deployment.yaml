@@ -1,0 +1,59 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: rqlite-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: id-generator-deployment
+spec:
+  selector:
+    matchLabels:
+      app: id-generator
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: id-generator
+    spec:
+      volumes:
+        - name: backend-configmap
+          configMap:
+            name: backend-configmap
+            items:
+              - key: config.production.toml
+                path: config.production.toml
+        - name: rqlite-pvc
+          persistentVolumeClaim:
+            claimName: rqlite-pvc
+      containers:
+        - name: id-generator
+          image: vindr/vinlab-idgen
+          ports:
+            - containerPort: 8080
+              name: id-gen-port
+          env:
+            - name: API_ENV
+              value: production
+            - name: RQLITE__URI
+              value: http://localhost:4001
+          imagePullPolicy: Always
+        - name: rqlite
+          image: rqlite/rqlite
+          ports:
+            - containerPort: 4002
+              name: rqlite-raftport
+          volumeMounts:
+            - name: rqlite-pvc
+              mountPath: /rqlite/file/data
+      imagePullSecrets:
+        - name: vindr-ecr

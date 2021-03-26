@@ -1,0 +1,12 @@
+X,PO,ANNOTATOR,REVIEWER,PO_PARTNER,GUEST
+accounts,R,R,R,R,R
+annotations,R,CRUD,CRUD,R,R
+labels,CRUD,R,R,CRUD,R
+label_groups,CRUD,,,CRU,
+projects,CRU,R,R,R,R
+tasks,CRUD,RU,RU,CRUD,R
+objects,CR,R,R,CR,R
+stats,R,R,R,R,R
+sessions,CR,CR,CR,CR,CR
+studies,CRUD,R,R,RUD,R
+label_exports,CR,,,R,

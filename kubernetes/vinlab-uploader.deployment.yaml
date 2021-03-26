@@ -1,0 +1,70 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vinlab-uploader-deployment
+spec:
+  selector:
+    matchLabels:
+      app: vinlab-uploader
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vinlab-uploader
+    spec:
+      volumes:
+        - name: backend-configmap
+          configMap:
+            name: backend-configmap
+            items:
+              - key: pubkey.txt
+                path: pubkey.txt
+      containers:
+        - name: vindr-lab-upload
+          image: vindr/vinlab-dicom-uploader
+          ports:
+            - containerPort: 8080
+              name: backend-02
+          env:
+            - name: GUNICORN_WORKERS
+              value: "4"
+            - name: GUNICORN_PORT
+              value: "8080"
+            - name: ENVVAR_PREFIX_FOR_DYNACONF
+              value: APP
+            - name: ENV_FOR_DYNACONF
+              value: production
+            - name: APP_ORTHANC_API_URI
+              value: http://orthanc.vinlab-dev:8042
+            - name: APP_REDIS_URI
+              value: redis://redis.vinlab-dev:6379
+            - name: APP_REDIS_CACHE_TIME
+              value: "600"
+            - name: APP_ELASTICSEARCH_HOST
+              value: http://es.vinlab-dev:9200
+            - name: APP_ES_STUDIES_INDEX_PREFIX
+              value: vinlab_studies
+            - name: APP_ES_PROJECTS_INDEX_PREFIX
+              value: vinlab_projects
+            - name: APP_VINDR_LAB_API_KEY
+              value: "844a2b9b63071a7f8cd7ea00091feedd"
+            - name: APP_VINDR_LAB_URI
+              value: http://vinlab-api.vinlab-dev:8080
+            - name: APP_ID_GENERATOR_URI
+              value: http://id-generator.vinlab-dev:8080
+            - name: APP_PUBLIC_KEY_PATH
+              value: "key.pub"
+            - name: APP_KC_VERIFY_AUDIENCE
+              value: "vinlab-backend"
+            - name: APP_KEYCLOAK_HOST
+              value: "http://keycloak.vinlab-dev:8080"
+            - name: APP_KEYCLOAK_REALM
+              value: "vinlab"
+          volumeMounts:
+            - name: backend-configmap
+              mountPath: /app/key.pub
+              subPath: pubkey.txt
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: vindr-ecr

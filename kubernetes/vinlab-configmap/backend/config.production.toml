@@ -1,0 +1,14 @@
+[webserver]
+port = 8080
+[elasticsearch]
+annotation_index_prefix = "vinlab_annotations"
+label_index_prefix = "vinlab_labels"
+study_index_prefix = "vinlab_studies"
+project_index_prefix = "vinlab_projects"
+label_export_index_prefix = "vinlab_label_exports"
+object_index_prefix = "vinlab_objects"
+session_index_alias = "vinlab_sessions"
+label_group_index_prefix = "vinlab_label_groups"
+task_index_prefix = "vinlab_tasks"
+account_index_prefix = "vinlab_accounts"
+counter_index_prefix = "vinlab_counter"

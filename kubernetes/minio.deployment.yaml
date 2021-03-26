@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: minio-pvc
+  namespace: vinlab-dev
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minio-deployment
+spec:
+  selector:
+    matchLabels:
+      app: minio
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: minio
+    spec:
+      nodeSelector:
+        node_name: data_01
+      volumes:
+        - name: minio-pvc
+          persistentVolumeClaim:
+            claimName: minio-pvc
+      containers:
+        - name: minio
+          image: minio/minio
+          ports:
+            - containerPort: 9000
+              name: minio-port
+          command:
+            - "/bin/sh"
+            - "-ce"
+            - "/usr/bin/docker-entrypoint.sh minio server /data"
+          env:
+            - name: MINIO_ACCESS_KEY
+              value: vindr-lab-api
+            - name: MINIO_SECRET_KEY
+              value: vindr-lab-api
+          volumeMounts:
+            - name: minio-pvc
+              mountPath: /data
