@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: elasticsearch-pvc
-  namespace: vinlab-dev
+  namespace: vinlab
 spec:
   accessModes:
     - ReadWriteOnce
@@ -26,8 +26,6 @@ spec:
       labels:
         app: es
     spec:
-      nodeSelector:
-        node_name: data_01
       volumes:
         - name: elasticsearch-pvc
           persistentVolumeClaim:

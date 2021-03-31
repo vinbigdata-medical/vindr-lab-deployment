@@ -13,8 +13,6 @@ spec:
       labels:
         app: vinlab-api
     spec:
-      nodeSelector:
-        node_name: data_01
       volumes:
         - name: backend-configmap
           configMap:
@@ -36,9 +34,9 @@ spec:
             - name: DEBUG
               value: "DEBUG"
             - name: ELASTICSEARCH__URI
-              value: http://es.vinlab-dev:9200
+              value: http://es.vinlab:9200
             - name: KEYCLOAK__URI
-              value: http://keycloak.vinlab-dev:8080
+              value: http://keycloak.vinlab:8080
             - name: KEYCLOAK__MASTER_REALM
               value: master
             - name: KEYCLOAK__APP_REALM
@@ -48,7 +46,7 @@ spec:
             - name: KEYCLOAK__ADMIN_PASSWORD
               value: admin
             - name: MINIO__URI
-              value: minio.vinlab-dev:9000
+              value: minio.vinlab:9000
             - name: MINIO__ACCESS_KEY_ID
               value: vindr-lab-api
             - name: MINIO__SECRET_ACCESS_KEY
@@ -56,11 +54,11 @@ spec:
             - name: MINIO__BUCKET_NAME
               value: vinlab-label-exported
             - name: REDIS__URI
-              value: redis.vinlab-dev:6379
+              value: redis.vinlab:6379
             - name: ORTHANC__URI
-              value: http://orthanc.vinlab-dev:8042
+              value: http://orthanc.vinlab:8042
             - name: ID_GENERATOR__URI
-              value: http://id-generator.vinlab-dev:8080
+              value: http://id-generator.vinlab:8080
           volumeMounts:
             - name: backend-configmap
               mountPath: /opt/app/conf/config.production.toml

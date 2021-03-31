@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: keycloak-pvc
-  namespace: vinlab-dev
+  namespace: vinlab
 spec:
   accessModes:
     - ReadWriteOnce

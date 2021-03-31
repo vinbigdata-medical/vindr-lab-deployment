@@ -14,8 +14,6 @@ spec:
       labels:
         app: nginx
     spec:
-      nodeSelector:
-        node_name: data_01
       volumes:
         - name: apigateway-configmap
           configMap:
@@ -28,8 +26,8 @@ spec:
           image: nginx:latest
           ports:
             - containerPort: 80
-              name: nginx-port
             - containerPort: 443
-              name: https-port
-            - name: workdir
-              mountPath: "/usr/share/nginx/html"
+          volumeMounts:
+            - name: apigateway-configmap
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf

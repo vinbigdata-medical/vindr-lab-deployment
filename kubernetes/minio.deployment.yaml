@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: minio-pvc
-  namespace: vinlab-dev
+  namespace: vinlab
 spec:
   accessModes:
     - ReadWriteOnce
@@ -26,8 +26,6 @@ spec:
       labels:
         app: minio
     spec:
-      nodeSelector:
-        node_name: data_01
       volumes:
         - name: minio-pvc
           persistentVolumeClaim:
