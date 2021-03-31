@@ -18,7 +18,7 @@ and the instruction is going to be described below. But we think using Kubernete
 
 ## Prerequisites
 
-Install the <a href="https://k3s.io/">k3s</a> at first. But please remind that we will use `ingress-nginx` for routing purposes, it conflicts with default component of k3s is traefik, so you just need to disable that. Please follow this <a href="https://github.com/k3s-io/k3s/issues/1160" target="_top">issue</a> to fix.
+We use k3s as Kubernetes supporter. Install the <a href="https://k3s.io/">k3s</a> at first.
 
 ## Run
 
@@ -26,17 +26,9 @@ Install the <a href="https://k3s.io/">k3s</a> at first. But please remind that w
 
 - Then, go in to the kubernetes folder, and create the config map: `sh ./create_config_map.sh`
 
-- As you can see, we use ingress-nginx to load-balance and route endpoints.
-  First, create a specific namespace for it by: `kubectl create namespace vingress` then install the `ingress-nginx`:
+- Next step, just run `kubectl apply -f . -n vinlab`
 
-```
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm repo update
-
-helm install ingress-nginx ingress-nginx/ingress-nginx -n ingress
-```
-
-- Next step, just run `kubectl apply -f .`
+- As you can see, in the first commits, we use `ingress-nginx` to load-balance and route endpoints. However, we found out that was inconvenient. So remove it and try another simple solution, a load-balancer service.
 
 # :whale2: Docker
 
