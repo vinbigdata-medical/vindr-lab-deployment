@@ -4,13 +4,17 @@
 
 Welcome to the VinDr Lab project.
 
+# :wrench: System Properties
+
+Our project requires at least 4GB of RAM system for the best performance and experiement.
+
 # :rocket: Start it up
 
 There are two ways to deploy our project are:
 
-**Option 1: Kubernetes**
+**Option 1: Kubernetes (Recommened)**
 
-**Option 2: Docker (Coming soon)**
+**Option 2: Docker (Temporary not available)**
 
 and the instruction is going to be described below. But we think using Kubernetes will be more interesting.
 
@@ -24,7 +28,7 @@ We use k3s as Kubernetes supporter. Install the <a href="https://k3s.io/">k3s</a
 
 - First, you must initialize the namespace for these deployments by running: `kubectl create namespace vinlab`
 
-- Then, go in to the kubernetes folder, and create the config map: `sh ./create_config_map.sh`
+- Then, go in to the `kubernetes` folder and create the config map: `sh ./create_config_map.sh`
 
 - Next step, just run `kubectl apply -f . -n vinlab`
 

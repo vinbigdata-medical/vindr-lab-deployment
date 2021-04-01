@@ -1,3 +1,2 @@
-/docker/data/*
-/docker/keycloak-db/**
-*.db
+/docker/data/
+/docker/keycloak-db/
