@@ -10,7 +10,7 @@ There are two ways to deploy our project are:
 
 **Option 1: Kubernetes**
 
-**Option 2: Docker**
+**Option 2: Docker (Coming soon)**
 
 and the instruction is going to be described below. But we think using Kubernetes will be more interesting.
 
