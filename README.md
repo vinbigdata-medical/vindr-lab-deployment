@@ -12,9 +12,9 @@ Our project requires at least 4GB of RAM system for the best performance and exp
 
 There are two ways to deploy our project are:
 
-**Option 1: Kubernetes (Recommened)**
+**Option 1: Kubernetes (Recommend)**
 
-**Option 2: Docker (Temporary not available)**
+**Option 2: Docker (Temporarily not available)**
 
 and the instruction is going to be described below. But we think using Kubernetes will be more interesting.
 
