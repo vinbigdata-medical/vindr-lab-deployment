@@ -56,14 +56,23 @@ MinIO is being used to store some other things from the API. There is a small se
 
 # :link: Endpoints
 
-| Name     | Endpoint                              |
-| -------- | ------------------------------------- |
-| Main     | `http://localhost:8080`               |
-| Backend  | `http://localhost:8080/api`           |
-| Orthanc  | `http://localhost:8080/dicomweb`      |
-| Keycloak | `http://localhost:8080/auth`          |
-| ES       | `http://localhost:8080/elasticsearch` |
-| MinIO    | `http://localhost:8080/minio`         |
+| Name      | Endpoint                              |
+| --------- | ------------------------------------- |
+| Main      | `http://localhost:8080`               |
+| Dashboard | `http://localhost:8080/dashboard`     |
+| Backend   | `http://localhost:8080/api`           |
+| Orthanc   | `http://localhost:8080/dicomweb`      |
+| Keycloak  | `http://localhost:8080/auth`          |
+| ES        | `http://localhost:8080/elasticsearch` |
+| MinIO     | `http://localhost:8080/minio`         |
+
+# :pencil2: Note
+
+1. Before using the system, please remember to setup the Keycloak first by [the doc](KEYCLOAK.md) !
+
+2. As you can see, from the start, you will start at the `http://localhost:8080` endpoint. Normally, the nginx will redirect to `http://localhost:8080/dashboard`. However, the Dashboard endpoint will check what is your current session and permissions, if it is not permitted or not available. The site will redirect to login page of Keycloak. There is one more thing to notice here, when the Dashboard redirect to Keycloak login screen, if you see the error page of Keycloak, please go to the Keycloak enpoint to set it up
+
+3. When you enter the Main site, you may see the 502 Error from Nginx. But do not worry, the system needs a bit of time to warm up and it will ready in some minutes.
 
 ---
 
