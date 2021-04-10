@@ -12,9 +12,9 @@ Our project requires at least 4GB of RAM system for the best performance and exp
 
 There are two ways to deploy our project are:
 
-**Option 1: Kubernetes (Recommend)**
+**Option 1: Kubernetes**
 
-**Option 2: Docker (Temporarily not available)**
+**Option 2: Docker**
 
 and the instruction is going to be described below. But we think using Kubernetes will be more interesting.
 
@@ -38,11 +38,11 @@ We use k3s as Kubernetes supporter. Install the <a href="https://k3s.io/">k3s</a
 
 ## Prerequisites
 
-To deploy using Docker, yes, install docker first
+To deploy using Docker, yes, install `docker` and `docker-compose` first
 
 ## Run
 
-We've already made it as simple as we can. Just go to the docker directory then run: `sh ./run.sh` and double check by `docker ps`
+We've already made it as simple as we can. Just go to the docker directory then run: `./run.sh` file and double check by `docker ps`
 
 # :paperclip: Relevants
 
