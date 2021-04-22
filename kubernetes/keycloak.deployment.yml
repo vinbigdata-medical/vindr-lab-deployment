@@ -41,6 +41,8 @@ spec:
               value: admin
             - name: KEYCLOAK_PASSWORD
               value: admin
+            - name: JAVA_OPTS
+              value: "-Dkeycloak.profile.feature.scripts=enabled -Dkeycloak.profile.feature.upload_scripts=enabled"
           volumeMounts:
             - name: keycloak-pvc
               mountPath: /opt/jboss/keycloak/standalone/data

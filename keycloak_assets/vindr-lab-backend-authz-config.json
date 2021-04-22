@@ -1,0 +1,749 @@
+{
+  "allowRemoteResourceManagement": true,
+  "policyEnforcementMode": "ENFORCING",
+  "resources": [
+    {
+      "name": "Default Resource",
+      "type": "urn:vinlab-backend:resources:default",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "e76c1d61-a6fc-42eb-9ff3-350909395593",
+      "uris": [
+        "/*"
+      ]
+    },
+    {
+      "name": "studies",
+      "ownerManagedAccess": false,
+      "displayName": "studies",
+      "attributes": {},
+      "_id": "598ad38a-fbc2-4b70-a0b5-93122550c9cf",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "tasks",
+      "ownerManagedAccess": false,
+      "displayName": "tasks",
+      "attributes": {},
+      "_id": "020a19d5-b4f5-4255-b4f8-4ee2e5f38af6",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "accounts",
+      "ownerManagedAccess": false,
+      "displayName": "accounts",
+      "attributes": {},
+      "_id": "fd004a41-5310-4e6f-8093-c06d6c571313",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "annotations",
+      "ownerManagedAccess": false,
+      "displayName": "annotations",
+      "attributes": {},
+      "_id": "3b030b07-29d1-486c-a35b-0aa7921a2a9b",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "labels",
+      "ownerManagedAccess": false,
+      "displayName": "labels",
+      "attributes": {},
+      "_id": "06d42d17-4190-46f7-ba48-4d5abc7e0857",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "label_groups",
+      "ownerManagedAccess": false,
+      "displayName": "label_groups",
+      "attributes": {},
+      "_id": "cdcca929-ca17-4edf-9825-ac9cf60e74ee",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "objects",
+      "ownerManagedAccess": false,
+      "displayName": "objects",
+      "attributes": {},
+      "_id": "9eb65e5d-966d-4a7d-aea8-0e0fa618d82e",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "projects",
+      "ownerManagedAccess": false,
+      "displayName": "projects",
+      "attributes": {},
+      "_id": "6bda5e4e-cd92-417a-946c-a970e9fa4f97",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "sessions",
+      "ownerManagedAccess": false,
+      "displayName": "sessions",
+      "attributes": {},
+      "_id": "b1740158-333a-406e-b851-a8c2854ebe1e",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "ownerManagedAccess": false,
+      "displayName": "stats",
+      "attributes": {},
+      "_id": "f6b6ee67-1642-4abc-b4bc-2aed5ebb254a",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "userinfo",
+      "ownerManagedAccess": false,
+      "displayName": "userinfo",
+      "attributes": {},
+      "_id": "e4fe0883-2a6d-4965-a16a-3c48eb9b42d9",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    },
+    {
+      "name": "label_exports",
+      "ownerManagedAccess": false,
+      "displayName": "label_exports",
+      "attributes": {},
+      "_id": "1177a514-c1b8-4180-bb22-0984f5358142",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "create"
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "b859dfb1-633c-4a06-93c5-d172cc38d959",
+      "name": "Default Policy",
+      "description": "A policy that grants access only for users within this realm",
+      "type": "js",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "code": "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
+      }
+    },
+    {
+      "id": "6859c9c5-8ff0-4acf-812f-818f5dcb9074",
+      "name": "Reviewer",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"REVIEWER\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "1eb7d698-c8f3-41de-86f4-cfc90b6cb2d7",
+      "name": "Project Owner",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"PO\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "e5f7f64a-d525-4e45-8c25-3f242e2e3748",
+      "name": "Annotator",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"ANNOTATOR\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "44f9f777-95e1-43d4-9edf-b476f4061040",
+      "name": "Guest",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"GUEST\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "1157904e-29d4-4049-b7a2-20f5ea932cb2",
+      "name": "Project Owner Partner",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"PO_PARTNER\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "3ce6f0b0-0c14-4f78-a464-d6e6fc6a236d",
+      "name": "Default Permission",
+      "description": "A permission that applies to the default resource type",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "defaultResourceType": "urn:vinlab-backend:resources:default",
+        "applyPolicies": "[\"Default Policy\"]"
+      }
+    },
+    {
+      "id": "6bfcdaac-d8fd-46c6-9496-340b5d29db44",
+      "name": "Get Accounts",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"accounts\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "4b70d481-3922-4da1-ac22-8a62a1a5fc4d",
+      "name": "Read Annotations",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"annotations\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "8c1457dc-5729-4e23-9cca-3e60aeb0c127",
+      "name": "Create Annotations",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"annotations\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"Reviewer\",\"Annotator\"]"
+      }
+    },
+    {
+      "id": "1a0e8f98-8c24-4f13-9a33-fdaa1e4f0549",
+      "name": "Update Annotations",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"annotations\"]",
+        "scopes": "[\"update\"]",
+        "applyPolicies": "[\"Reviewer\",\"Annotator\"]"
+      }
+    },
+    {
+      "id": "62349b8e-7d67-4188-9ea2-012b7886596c",
+      "name": "Delete Annotations",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"annotations\"]",
+        "scopes": "[\"delete\"]",
+        "applyPolicies": "[\"Reviewer\",\"Annotator\"]"
+      }
+    },
+    {
+      "id": "7d479235-557c-43c9-8bc3-a241ea515305",
+      "name": "Read Label Groups",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"label_groups\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "06452c9d-64f1-4f72-bcd8-d2fa56cc646f",
+      "name": "Read Labels",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"labels\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "1b8ef78f-dd4b-44a5-8406-723c91097c06",
+      "name": "Read Projects",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"projects\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "8e92a360-05bc-433f-8d57-43ff2e189cbf",
+      "name": "Read Tasks",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"tasks\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "69d9995c-527e-4854-ba1d-5c39a6e4be0a",
+      "name": "Read Objects",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"objects\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "4b5a4fdd-cda1-45b2-aca1-e1c85e01164b",
+      "name": "Read Stats",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"stats\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "fe66d515-7128-4e68-8d6a-9a0eef3ffd48",
+      "name": "Create Label Groups",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"label_groups\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "a88450c4-0a61-4434-920a-98a721ce4617",
+      "name": "Read Label Exports",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"label_exports\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "233ac054-028b-4a4d-8b48-38d9e54fed76",
+      "name": "Update Labels",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"labels\"]",
+        "scopes": "[\"update\"]",
+        "applyPolicies": "[\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "3d7207eb-37e4-4cc0-a45e-d392e247066b",
+      "name": "Delete Label Groups",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"label_groups\"]",
+        "scopes": "[\"delete\"]",
+        "applyPolicies": "[\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "eb2c6ec4-98c5-44ec-a718-79cb21c05ce3",
+      "name": "Update Tasks",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"tasks\"]",
+        "scopes": "[\"update\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "c08d8b3d-d68a-4162-aa15-bf5f2b5833ce",
+      "name": "Delete Projects",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"projects\"]",
+        "scopes": "[\"delete\"]"
+      }
+    },
+    {
+      "id": "6267f764-58fc-4ef7-8a2b-ac743ff0e9f5",
+      "name": "Read Sessions",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"sessions\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "3a094f2b-cb38-4882-b45a-dc4457266a04",
+      "name": "Create Label Exports",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"label_exports\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "9d90e1b2-a8ae-4af6-b33e-4a261fc2a17c",
+      "name": "Create Labels",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"labels\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "83ea73c2-deea-41d6-aa25-c2c086f1d529",
+      "name": "Delete Labels",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"labels\"]",
+        "scopes": "[\"delete\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "d0d94dd0-eae3-4960-be6a-7412d7081870",
+      "name": "Update Projects",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"projects\"]",
+        "scopes": "[\"update\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "7d9a3847-5cab-4eb6-bf55-e600dfbc8eb4",
+      "name": "Create Tasks",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"tasks\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "502c30d7-65c2-42d2-bc6e-f5f44a9f2ad3",
+      "name": "Delete Tasks",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"tasks\"]",
+        "scopes": "[\"delete\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "1f910b8b-e9c6-4cec-af11-d51fae475292",
+      "name": "Create Objects",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"objects\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "c3c5f6dd-3f1e-4a1a-8f06-fc01b2c48841",
+      "name": "Create Studies",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"studies\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "3f7e481d-cfc6-479b-9f14-ed57f3074dd1",
+      "name": "Delete Studies",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"studies\"]",
+        "scopes": "[\"delete\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "9d544f7a-7143-41b2-b8cb-db632f4afc94",
+      "name": "Read Studies",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"studies\"]",
+        "scopes": "[\"read\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "eeb8d3b4-48e4-4db7-86b1-f11ab6c7f05d",
+      "name": "Update Studies",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"studies\"]",
+        "scopes": "[\"update\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    },
+    {
+      "id": "29aebf0a-c5b2-4e74-a23d-f2e968ddf069",
+      "name": "Create Sessions",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"sessions\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"Reviewer\",\"Project Owner Partner\",\"Annotator\",\"Project Owner\",\"Guest\"]"
+      }
+    },
+    {
+      "id": "1078afba-9215-4a36-913f-f43876fc9650",
+      "name": "Create Projects",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"projects\"]",
+        "scopes": "[\"create\"]",
+        "applyPolicies": "[\"Project Owner Partner\",\"Project Owner\"]"
+      }
+    }
+  ],
+  "scopes": [
+    {
+      "id": "71c759d0-9ca1-4548-9a3b-e1b7b2a3e607",
+      "name": "create",
+      "displayName": "create"
+    },
+    {
+      "id": "c7e62f31-aaa7-41d5-abd0-b42b33c3d9cf",
+      "name": "update",
+      "displayName": "update"
+    },
+    {
+      "id": "413ca5ec-c5bf-47b1-ba5e-97abe16ea66a",
+      "name": "delete",
+      "displayName": "delete"
+    },
+    {
+      "id": "5874a83b-bb87-4a17-aa12-4254db8bc556",
+      "name": "read",
+      "displayName": "read"
+    }
+  ],
+  "decisionStrategy": "UNANIMOUS"
+}

@@ -198,7 +198,11 @@ services:
   keycloak:
     image: jboss/keycloak:11.0.2
     container_name: vinlab-keycloak
-    command: ["-Djboss.http.port=9090"]
+    command:
+      [
+        "-Djboss.http.port=9090",
+        "-Dkeycloak.profile.feature.upload_scripts=enabled",
+      ]
     ports:
       - 9090
     environment:
@@ -223,12 +227,12 @@ services:
     # command: ["rqlited","-http-addr","localhost:4001",
     #   "-http-adv-addr","localhost:4001",
     #   "-raft-addr","localhost:4002",
-    #   "-raft-adv-addr","localhost:4002", 
+    #   "-raft-adv-addr","localhost:4002",
     #   "/rqlite/file/data"]
     # environment:
     #   - "http-addr=0.0.0.0:4001"
-    #   - "http-adv-addr=http://vinlab-rqlite:4001" 
-    #   - "raft-addr=http://vinlab-rqlite:4002" 
+    #   - "http-adv-addr=http://vinlab-rqlite:4001"
+    #   - "raft-addr=http://vinlab-rqlite:4002"
     #   - "raft-adv-addr=localhost:4001"
     volumes:
       - ./data/rqlite:/rqlite/file/data
