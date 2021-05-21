@@ -108,13 +108,18 @@ First, create a new `realm` by:
 
 <img src="./images/kc_add_realm.png" alt="Add Realm" width="600"/>
 
-Select `vindr-lab-realm-export.json` and hit `Create`
+Select `vindr-lab-realm-export.json` and hit `Create`.
+This step will replace steps [Roles](./KEYCLOAK.md#Roles), [Clients](./KEYCLOAK.md#Clients) in [our Keycloak document](KEYCLOAK.md).
 
 Then, go to `Clients/vinlab-backend`, choose `Authorization/Settings` tab, click `Import` then open `vindr-lab-backend-authz-config.json` file
 
 <img src="./images/kc_import_auth.jpg" alt="Add Realm" width="600"/>
 
-Finally, it seems done however, please create your own user to login the system. Enjoy!
+This step will replace step [Authorizing Permissions](./KEYCLOAK.md#Authorizing Permissions) in [our Keycloak document](KEYCLOAK.md).
+
+Finally, it seems done however, please create your own user to login the system. Now, you must follow [Users](./KEYCLOAK.md#Users) in our doc.
+
+Enjoy!
 
 ## MinIO
 
