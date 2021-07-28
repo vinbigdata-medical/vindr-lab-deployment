@@ -115,7 +115,7 @@ Then, go to `Clients/vinlab-backend`, choose `Authorization/Settings` tab, click
 
 <img src="./images/kc_import_auth.jpg" alt="Add Realm" width="600"/>
 
-This step will replace step [Authorizing Permissions](./KEYCLOAK.md#Authorizing Permissions) in [our Keycloak document](KEYCLOAK.md).
+This step will replace step [Authorizing Permissions](./KEYCLOAK.md#authorizing-permissions) in [our Keycloak document](KEYCLOAK.md).
 
 Finally, it seems done however, please create your own user to login the system. Now, you must follow [Users](./KEYCLOAK.md#Users) in our doc.
 
