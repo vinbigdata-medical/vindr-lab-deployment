@@ -1,3 +1,4 @@
+#!/bin/bash
 source env.sh
 mkdir keycloak-db
 mkdir data
