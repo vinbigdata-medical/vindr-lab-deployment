@@ -2,24 +2,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vinlab-dashboard-deployment
+  name: vinlab-viewer-deployment
 spec:
   selector:
     matchLabels:
-      app: dashboard
+      app: viewer
   replicas: 1
   template:
     metadata:
       labels:
-        app: dashboard
+        app: viewer
     spec:
       containers:
-        - name: vinlab-dashboard
-          image: vindr/vinlab-dashboard
+        - name: vinlab-viewer
+          image: vindr/vinlab-viewer
+          ports:
+            - containerPort: 80
+              name: viewer-port
           env:
-            - name: PUBLIC_URL
-              value: /dashboard
-
             - name: SERVER_BASE_URL
               value: http://localhost:8080
 
@@ -49,15 +49,24 @@ spec:
 
             - name: OIDC_AUDIENCE
               value: "vinlab-backend"
-          ports:
-            - containerPort: 80
-              name: dashboard-port
+          # imagePullPolicy: Always
           readinessProbe:
             httpGet:
-              path: /
+              path: /medical-view
               port: 80
             initialDelaySeconds: 30
             periodSeconds: 3
-          imagePullPolicy: Always
       imagePullSecrets:
         - name: vindr-ecr
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: viewer
+spec:
+  selector:
+    app: viewer
+  ports:
+    - port: 80
+      targetPort: 80
+

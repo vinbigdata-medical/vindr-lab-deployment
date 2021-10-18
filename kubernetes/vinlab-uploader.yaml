@@ -57,3 +57,14 @@ spec:
           imagePullPolicy: Always
       imagePullSecrets:
         - name: vindr-ecr
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vinlab-uploader
+spec:
+  selector:
+    app: vinlab-uploader
+  ports:
+    - port: 8080
+      targetPort: 8080

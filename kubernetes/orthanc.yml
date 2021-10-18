@@ -54,3 +54,15 @@ spec:
               mountPath: /var/lib/orthanc/db
       imagePullSecrets:
         - name: vindr-ecr
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orthanc
+spec:
+  selector:
+    app: orthanc
+  ports:
+    - port: 8042
+      targetPort: 8042
+

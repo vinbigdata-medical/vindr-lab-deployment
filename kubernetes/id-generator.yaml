@@ -57,3 +57,15 @@ spec:
               mountPath: /rqlite/file/data
       imagePullSecrets:
         - name: vindr-ecr
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: id-generator
+spec:
+  selector:
+    app: id-generator
+  ports:
+    - port: 8080
+      targetPort: 8080
+
