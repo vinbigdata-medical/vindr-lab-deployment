@@ -124,14 +124,14 @@ services:
       - orthanc
 
   minio:
-    image: minio/minio
+    image: minio/minio:RELEASE.2022-05-04T07-45-27Z
     container_name: vinlab-minio
     volumes:
       - ./data/minio:/data
-    command: [server, /data]
+    command: "minio server /data --console-address \":9001\""
     environment:
-      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
-      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY}
     ports:
       - 9000
     restart: always
@@ -224,16 +224,6 @@ services:
     ports:
       - 4001
       - 4002
-    # command: ["rqlited","-http-addr","localhost:4001",
-    #   "-http-adv-addr","localhost:4001",
-    #   "-raft-addr","localhost:4002",
-    #   "-raft-adv-addr","localhost:4002",
-    #   "/rqlite/file/data"]
-    # environment:
-    #   - "http-addr=0.0.0.0:4001"
-    #   - "http-adv-addr=http://vinlab-rqlite:4001"
-    #   - "raft-addr=http://vinlab-rqlite:4002"
-    #   - "raft-adv-addr=localhost:4001"
     volumes:
       - ./data/rqlite:/rqlite/file/data
     restart: always
