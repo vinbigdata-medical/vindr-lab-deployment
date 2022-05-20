@@ -10,6 +10,7 @@ services:
       API_ENV: production
       DEBUG: "DEBUG"
       GIN_MODE: "release"
+      WEBSERVER__API_KEY: ${API_KEY}
       ELASTICSEARCH__URI: ${ES_URI}
       KEYCLOAK__URI: ${KEYCLOAK_URI}
       KEYCLOAK__MASTER_REALM: master
