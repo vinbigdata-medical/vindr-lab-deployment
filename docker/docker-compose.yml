@@ -60,7 +60,7 @@ services:
       APP_ELASTICSEARCH_HOST: ${ES_URI}
       APP_ES_STUDIES_INDEX_PREFIX: vinlab_studies
       APP_ES_PROJECTS_INDEX_PREFIX: vinlab_projects
-      APP_VINDR_LAB_API_KEY: "844a2b9b63071a7f8cd7ea00091feedd"
+      APP_VINDR_LAB_API_KEY: ${API_KEY}
       APP_VINDR_LAB_URI: ${API_URI}
       APP_ID_GENERATOR_URI: ${IDGEN_URI}
       APP_PUBLIC_KEY_PATH: "key.pub"
